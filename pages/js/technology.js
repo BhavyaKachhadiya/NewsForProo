@@ -41,12 +41,14 @@ function createCard(img, title, description, category, link, source) {
     return card;
 }
 
-fetch('news.json')
+fetch('../news.json')
   .then(response => response.json())
   .then(data => {
     const articles = data.articles;
+
+    const filteredData = articles.filter(articles => articles.category === "Technology");
     const newsRow = document.getElementById('newsRow');
-    articles.forEach(news => {
+    filteredData.forEach(news => {
       const card = createCard(news.img, news.title, news.description, news.category, news.link , news.source);
       newsRow.appendChild(card);
     });

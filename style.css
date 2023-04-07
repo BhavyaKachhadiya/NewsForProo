@@ -9,4 +9,17 @@
   .category-entertainment {
     background-color: #ff9800; /* orange */
   }
-  
+  .card{
+    height: 600px;
+    display: flex;
+    align-items: center;
+  }
+
+  .card-body{
+    display: flex !important; 
+    flex-wrap: wrap !important;
+    align-content: stretch!important;
+    justify-content: space-evenly!important;
+    flex-direction: column!important;
+    align-items: flex-start!important;
+  }

@@ -1,4 +1,4 @@
-fetch('./news.json')
+fetch('/news.json')
   .then(response => response.json())
   .then(data => {
     const categoryList = document.getElementById('sourceList');
@@ -7,7 +7,7 @@ fetch('./news.json')
       if (data.articles[i].source === 'BBC') {
         const li = document.createElement('li');
         const a = document.createElement('a');
-        a.href = `/pages/source/${data.articles[i].source.toLowerCase()}.html`;
+        a.href = `/pages/source/${data.articles[i].source.toLowerCase()}/`;
         a.className = 'dropdown-item';
         a.innerText = data.articles[i].source;
         li.appendChild(a);
@@ -16,7 +16,7 @@ fetch('./news.json')
       }
     }
   });
-fetch('./news.json')
+fetch('/news.json')
   .then(response => response.json())
   .then(data => {
     const categoryList = document.getElementById('sourceList');
@@ -25,7 +25,7 @@ fetch('./news.json')
       if (data.articles[i].source === 'Gadgets360') {
         const li = document.createElement('li');
         const a = document.createElement('a');
-        a.href = `/pages/source/${data.articles[i].source.toLowerCase()}.html`;
+        a.href = `/pages/source/${data.articles[i].source.toLowerCase()}/`;
         a.className = 'dropdown-item';
         a.innerText = data.articles[i].source;
         li.appendChild(a);
@@ -34,7 +34,7 @@ fetch('./news.json')
       }
     }
   });
-fetch('./news.json')
+fetch('/news.json')
   .then(response => response.json())
   .then(data => {
     const categoryList = document.getElementById('sourceList');
@@ -43,7 +43,7 @@ fetch('./news.json')
       if (data.articles[i].source === 'infoworld') {
         const li = document.createElement('li');
         const a = document.createElement('a');
-        a.href = `/pages/source/${data.articles[i].source.toLowerCase()}.html`;
+        a.href = `/pages/source/${data.articles[i].source.toLowerCase()}/`;
         a.className = 'dropdown-item';
         a.innerText = data.articles[i].source;
         li.appendChild(a);

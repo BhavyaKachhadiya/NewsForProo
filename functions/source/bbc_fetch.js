@@ -23,9 +23,6 @@ function createCard(img, title, description, category, link, source) {
 
   var cardText = document.createElement('p');
   cardText.className = 'card-text';
-  if (description.split(" ").length > 50) {
-    description = description.split(" ").splice(0, 50).join(" ") + "...";
-}
   cardText.textContent = description;
   cardBody.appendChild(cardText);
 
@@ -41,17 +38,16 @@ function createCard(img, title, description, category, link, source) {
   return card;
 }
 
-
 fetch('/news.json')
-  .then(response => response.json())
-  .then(data => {
-    const articles = data.articles;
+.then(response => response.json())
+.then(data => {
+  const articles = data.articles;
 
-    const filteredData = articles.filter(articles => articles.category === "Technology");
-    const newsRow = document.getElementById('newsRow');
-    filteredData.forEach(news => {
-      const card = createCard(news.img, news.title, news.description, news.category, news.link , news.source);
-      newsRow.appendChild(card);
-    });
-  })
-  .catch(error => console.error(error));
+  const filteredData = articles.filter(articles => articles.source === "BBC");
+  const newsRow = document.getElementById('bbc');
+  filteredData.forEach(news => {
+    const card = createCard(news.img, news.title, news.description, news.category, news.link , news.source);
+    newsRow.appendChild(card);
+  });
+})
+.catch(error => console.error(error));

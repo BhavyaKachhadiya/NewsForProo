@@ -23,8 +23,8 @@ function createCard(img, title, description, category, link, source) {
 
   var cardText = document.createElement('p');
   cardText.className = 'card-text';
-  if (description.split(" ").length > 50) {
-    description = description.split(" ").splice(0, 50).join(" ") + "...";
+  if (description.split(" ").length > 20) {
+    description = description.split(" ").splice(0, 20).join(" ") + "...";
 }
   cardText.textContent = description;
   cardBody.appendChild(cardText);

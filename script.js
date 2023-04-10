@@ -31,6 +31,7 @@ function createCard(img, title, description, category, link, source) {
 
     var badge = document.createElement('span');
     badge.className = 'badge badge-primary category-' + category.toLowerCase();
+    badge.innerHTML = '<a href="pages/category/'+category+'">' ;
     badge.textContent = category;
     cardBody.appendChild(badge);
 

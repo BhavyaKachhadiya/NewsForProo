@@ -48,7 +48,7 @@ fetch('/news.json')
     const articles = data.articles;
 
     const filteredData = articles.filter(articles => articles.category === "Technology");
-    const newsRow = document.getElementById('newsRow');
+    const newsRow = document.getElementById('Tech');
     filteredData.forEach(news => {
       const card = createCard(news.img, news.title, news.description, news.category, news.link , news.source);
       newsRow.appendChild(card);
